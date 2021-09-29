@@ -1,0 +1,58 @@
+function imprimir(conteudo){
+  console.log(conteudo)
+}
+
+function mesmoNome(primeiroNome,segundoNome){
+  /*if(primeiroNome === segundoNome){
+    return true
+  }else{
+    return false
+  }*/
+  return primeiroNome == segundoNome
+}
+
+function maiorDeIdade(idade){
+  /*if(idade>=18){
+    return true
+  }else{
+    return false
+  }*/
+  return idade>=18
+}
+
+function valorComJuros(valorBoleto){
+  return valorBoleto*1.1
+}
+
+
+function mediaAritmetica(itens){
+  soma=0
+  for(index=0;index<itens.length;index++){
+    soma += itens[index]
+  }
+  return soma/itens.length
+  
+}
+
+function lucroBruto(receitaVendas,custo){
+  return (receitaVendas - custo)/receitaVendas*100
+}
+
+cwi = "cwi"
+reset = "reset"
+imprimir(mesmoNome(cwi,cwi))
+imprimir(mesmoNome(cwi,reset))
+imprimir("---")
+imprimir(maiorDeIdade(30))
+imprimir(maiorDeIdade(18))
+imprimir(maiorDeIdade(15))
+imprimir("---")
+imprimir(valorComJuros(100))
+imprimir(valorComJuros(984.5))
+imprimir("---")
+imprimir(mediaAritmetica([1]))
+imprimir(mediaAritmetica([1,4,10]))
+imprimir(mediaAritmetica([1,2,3,4,5]))
+imprimir("---")
+imprimir(lucroBruto(1000000,500000))
+imprimir(lucroBruto(528459.11,632501.87))

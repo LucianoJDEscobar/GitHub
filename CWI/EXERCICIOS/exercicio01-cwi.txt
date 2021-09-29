@@ -1,0 +1,13 @@
+exercicio01-cwi
+
+nomeCompleto = "Luciano Dutra"
+apelido = "Balaca"
+idade = 34
+dataNascimento = "13/04/1987"
+localNascimento = "Porto Alegre"
+altura = 1.69
+trabalhando = true
+apresentacao = "Meu nome é " + nomeCompleto + " (sou conhecido como " + apelido + ") e tenho " + idade + " anos. Nasci no dia " + dataNascimento + ", na cidade de " + localNascimento + ". Tenho " + altura + "m de altura e atualmente estou " + (trabalhando ? "empregado" : "desempregado") + "."
+
+
+console.log(apresentacao)

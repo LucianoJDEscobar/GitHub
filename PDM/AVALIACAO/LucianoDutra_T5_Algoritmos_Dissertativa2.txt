@@ -1,0 +1,26 @@
+Algoritmo "Questao1"
+Var //Declaração de variáveis
+   valor,total: real //Variáveis do tipo real
+Inicio //Início da programa
+   escreva("Digite o valor total da compra: R$ ") //Entrada de dados
+   leia(valor) //Armazenando o valor digitado na variável 'valor'
+   total <- valor/5 //Processamento de dados
+   escreva("Prestações a pagar 5x de R$ ",total) //Saída de dados
+Fimalgoritmo
+
+--------------------------------x-----------------------------------------------
+
+Algoritmo "Questao2"
+Var
+   nome: caracter
+   salfixo, total, salfinal: real
+Inicio
+   escreva("Digite o nome do vendedor: ")
+   leia(nome)
+   escreva("Informe o salário fixo: R$ ")
+   leia(salfixo)
+   escreva("Informe o total das vendas mensais: R$ ")
+   leia(total)
+   salfinal <- (total*1.15)+salfixo
+   escreva("O vendedor ",nome,", possui um salario fixo de R$",salfixo:4:2," e vai receber no final do mes R$",salfinal:6:2)
+Fimalgoritmo
