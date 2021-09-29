@@ -1,0 +1,9 @@
+1 - Uma lista com o nome de todas as gafanhotas.
+2 - Uma lista com os dados de todos aqueles que nasceram entre 1/01/2000 e 31/12/2015.
+3 - Uma lista com o nome de todos os homens que trabalham com Programadores.
+4 - Uma lista com os dados de todas as mulheres que nasceram no Brasil e que têm seu nome iniciando com a letrta J.
+5 - Uma lista com o nome e nacionalidade de todos os homens que têm Silva no nome, não nasceram no Brasil e pesam menos de 100kg.
+6 - Qual é a maior altura entre os gafanhotos homens que moram no Brasil?
+7 - Qual é a média de peso entre os gafanhotos cadastrados ?
+8 - Qual é o menor peso entre as gafanhotos mulheres que nasceram fora do Brasil e entre 01/01/1990 e 31/12/2000?
+9 - Quantas gafanhotos mulheres têm mais de 1.90m de altura?
