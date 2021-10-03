@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <style name="Container_Button"> //Identifica os butões
+        <item name="android:layout_width">0dp</item> //Largura do botão
+        <item name="android:layout_height">match_parent</item> //Altura do botão
+        <item name="android:layout_weight">1</item> //Espaço específico do botão
+        <item name="android:textSize">28sp</item> //Tamanho das letras -texto- dentro do botão
+        <item name="android:textStyle">bold</item> //Negrito das letras dentro do botão
+        <item name="android:gravity">center</item> //Centralização das letras
+        <item name="android:layout_margin">0.5dp</item> //Definição da margem do botão
+    </style>
+    <style name="Operators_Button" parent="Container_Button"> //Estilo dos botões de operação
+        <item name="android:background">@drawable/button_operator_clicado</item> //Cor de fundo de cada botão
+        <item name="android:textColor">@color/white</item> //Cor das letras
+    </style>
+    <style name="Numbers_Button" parent="Container_Button"> //Estilo dos botões numéricos
+        <item name="android:background">@drawable/button_number_clicado</item> //Cor de fundo de cada botão
+        <item name="android:textColor">@color/black</item> //Cor das letras
+
+    </style>
+</resources>
