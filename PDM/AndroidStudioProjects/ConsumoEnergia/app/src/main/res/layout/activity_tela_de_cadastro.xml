@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cor_de_fundo"
+    tools:context=".TelaDeCadastro">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/texto_novocadastro"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
+
+    <View
+        android:id="@+id/container_cadastro"
+        android:layout_width="match_parent"
+        android:layout_height="253dp"
+        android:background="@drawable/conteiner_login"
+        app:layout_constraintTop_toBottomOf="@+id/titulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="45dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <EditText
+        android:id="@+id/editar_novo_usuario"
+        style="@style/editar_texto"
+        app:layout_constraintTop_toTopOf="@+id/container_cadastro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Nome de usuário"
+        android:inputType="text"
+        android:maxLength="15"
+        android:drawableRight="@drawable/ic_usuario"
+        />
+
+    <EditText
+        android:id="@+id/editar_nova_senha"
+        style="@style/editar_texto"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/editar_novo_usuario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Senha"
+        android:maxLength="8"
+        android:drawableRight="@drawable/ic_senha"
+        />
+
+    <EditText
+        android:id="@+id/editar_nova_senha2"
+        style="@style/editar_texto"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/editar_nova_senha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Repita a senha"
+        android:maxLength="8"
+        android:drawableRight="@drawable/ic_senha"
+
+        />
+
+    <Button
+        android:id="@+id/botao_cadastrar"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/editar_nova_senha2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="45dp"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:text="@string/botao_cadastrar"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        />
+
+    <ProgressBar
+        android:id="@+id/progresso_login_cadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botao_cadastrar" />
+
+    <TextView
+        android:id="@+id/filosofia"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:textSize="20dp"
+        android:text="'Há uma força motriz mais poderosa que o vapor, a eletricidade e a energia atômica: a vontade'"
+        app:layout_constraintTop_toBottomOf="@+id/progresso_login_cadastro"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginTop="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:text="Albert Einstein"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filosofia"
+        android:layout_marginBottom="10dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
