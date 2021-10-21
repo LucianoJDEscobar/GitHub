@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Consumo Energia</string>
+    <string name="botao_entrar">ENTRAR</string>
+    <string name="texto_cadastro">Cadastrar novo usuário</string>
+    <string name="texto_novocadastro">Cadastrando novo usuário</string>
+    <string name="botao_cadastrar">CADASTRAR</string>
+</resources>
