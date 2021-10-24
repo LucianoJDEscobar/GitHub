@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:fillViewport="true"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cor_de_fundo"
+    tools:context=".TelaLogin">
+
+    <ImageView
+        android:layout_height="200dp"
+        android:layout_width="200dp"
+        android:layout_marginTop="45dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/energia_icone_01"
+        android:id="@+id/logo"/>
+
+    <View
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/fundo_login_senha"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        style="@style/container"/>
+
+    <EditText
+        app:layout_constraintTop_toTopOf="@+id/fundo_login_senha"
+        app:layout_constraintEnd_toEndOf="@+id/fundo_login_senha"
+        app:layout_constraintStart_toStartOf="@+id/fundo_login_senha"
+        android:id="@+id/editar_email"
+        style="@style/editar_texto"
+        android:maxLength="55"
+        android:inputType="text"
+        android:drawableRight="@drawable/ic_email"
+        android:hint="E-mail"/>
+
+    <EditText
+        app:layout_constraintEnd_toEndOf="@+id/fundo_login_senha"
+        app:layout_constraintStart_toStartOf="@+id/fundo_login_senha"
+        android:id="@+id/editar_senha"
+        app:layout_constraintTop_toBottomOf="@+id/editar_email"
+        style="@style/editar_texto"
+        android:maxLength="8"
+        android:inputType="numberPassword"
+        android:drawableRight="@drawable/ic_senha"
+        android:hint="Senha"/>
+
+    <Button
+        android:layout_height="50dp"
+        android:layout_width="150dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/botao_entrar"
+        app:layout_constraintTop_toBottomOf="@+id/fundo_login_senha"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:text="@string/botao_entrar"
+        android:textSize="15dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/black"/>
+
+    <ProgressBar
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/progresso_login"
+        app:layout_constraintTop_toBottomOf="@+id/botao_entrar"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/texto_cadastrar"
+        app:layout_constraintTop_toBottomOf="@id/progresso_login"
+        android:textStyle="bold"
+        android:text="@string/texto_cadastro"
+        android:textSize="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
