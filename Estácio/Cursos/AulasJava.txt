@@ -1,0 +1,833 @@
+//AULA ARRAYLIST
+import java.util.ArrayList;
+
+public class ArrayAprimorado{
+	public static void main(String[] args){
+		ArrayList<String> nomes = new ArrayList<String>();
+		nomes.add("Luciano");
+		nomes.add("Dutra");
+		nomes.add("Escobar");
+		
+		//Apaga tudo
+		//nome.clear();
+
+		//Apaga com base em um index ou nome de objeto
+		//nome.remove(index);
+		//nomes.remove("Luciano");
+
+		System.out.println(nomes.toString());
+		
+		//Pegar um valor específico no array
+		//System.out.println(nomes.get(index));
+
+		//Para saber se um arrayList está vazio "true"
+		//System.out.println(nomes.isEmpty());
+
+		//Para pesquisar se existe um conteúdo específico no ArrayList "true"
+		//System.out.println(nomes.contains("Juliano"));
+
+		//Retorna o tamanho do ArrayList, quantidade de index
+		//System.out.println(nomes.size());
+
+		//Retorna o index guardado de um conteúdo específico do ArrayList ou "-1" para não encontrado
+		//System.out.println(nomes.indexOf("Luciano"));
+
+		//Retorna o index guardado de um conteúdo específico do ArrayList ou "-1" para não encontrado
+		//System.out.println(nomes.indexOf("Luciano"));
+
+	}
+}
+
+//COMENTÁRIOS
+
+//Comentário de uma linha
+
+/*
+  Comentário de múltiplas linhas
+*/
+
+//CRIAÇÃO DE VARIÁVEIS E IMPRESSÃO
+
+/*
+* Tipo Nome = conteúdo;
+* O nome não pode começar com números e caracteres especiais
+*/
+
+public class Variaveis{
+	public static void main(String[] args){
+		String meuNome = "Luciano Juliano";
+		int idade = 21;
+		double altura = 1.72;
+		char genero = 'M';
+		boolean casado = true; //or false
+
+		System.out.print(meuNome); //Impressão na tela da variável meuNome
+		System.out.print("Me chamo "+meuNome+" e minha idade é "+idade); //Impressão concatenada na tela da variável meuNome com os áspas
+	}
+}
+
+//OPERADORES MATEMÁTICOS
+
+public class Matematica{
+	public static void main(String[] args){
+		int resultado = 10+3;
+		
+		System.out.print(resultado); //Impressão na tela da variavel resultado
+/*	+ -> Soma
+*	- -> Subtração
+*	* -> Multiplicação
+*	/ -> Divisão
+*	% -> Resto da divisão
+*	- -> Subtração
+*/
+	}
+}
+
+//OPERADORES DE COMPARAÇÃO
+
+public class Comparacao{
+	public static void main(String[] args){
+		boolean resultado = false;
+		
+		System.out.print(resultado); //Impressão na tela da variavel resultado
+/*	== -> Comparação, igualdade
+*	!= -> Diferença
+*	>  -> Maior
+*	>= -> Maior ou igual
+*	<  -> Menor
+*	<= -> Menor ou igual
+*/
+	}
+}
+
+/IMCREMENTO E DECREMENTO
+
+public class Imcremento{
+	public static void main(String[] args){
+		int numero = 1;
+		numero++;
+		System.out.print(numero); //Impressão na tela da variavel numero
+		
+/*	++ -> Sinal de incremento - Se for colocado após a variável ela incrementa na próxima linha de execução
+*	-- -> Sinal de decremento - Se for colocado após a variável ela decrementa na próxima linha de execução
+*/
+
+		int numero = 1;
+		
+		System.out.print(numero++); //Impressão na tela da variavel numero sem o incremento
+		System.out.print(numero); //Impressão na tela da variavel numero com o incremento
+		System.out.print(++numero); //Impressão na tela da variavel numero incrementada
+		System.out.print(numero); //Impressão na tela da variavel numero sem o incremento
+	}
+}
+
+//ESTRUTURA CONDICIONAL1
+
+public class Se{
+	public static void main(String[] args){
+		int idade = 18;
+		if(idade>=18){
+			System.out.print("VOCÊ É DE MAIOR"); 
+		}else{
+			System.out.print("VOCÊ É DE MENOR");
+		}
+	}
+}
+
+//ESTRUTURA CONDICIONAL2
+
+public class Caso{
+	public static void main(String[] args){
+		int diaSemana;
+		String nomeDia;
+		switch(diaSemana){
+			case 1:
+				nomeDia = "Domingo";
+				break;
+			case 2:
+				nomeDia = "Segunda";
+				break;
+			case 3:
+				nomeDia = "Terça";
+				break;
+			default:
+				nomeDia = "Restante do dia";
+				break;
+	
+			System.out.print(nomeDia); 
+		}
+	}
+}
+
+//ESTRUTURA REPETIÇÃO1
+
+public class Enquanto{
+	public static void main(String[] args){
+		int numero = 1;
+		while (numero <= 10){
+			System.out.print(numero);
+			numero++; 
+		}
+	}
+}
+
+//ESTRUTURA REPETIÇÃO2
+
+public class FacaEnquanto{
+	public static void main(String[] args){
+		int numero = 1;
+		do{
+			System.out.print(numero);
+			numero++; 
+		}while(numero <= 10);
+	}
+}
+
+//ESTRUTURA REPETIÇÃO3
+
+public class Para{
+	public static void main(String[] args){
+		
+		for(int i = 1; i < 10; i++){
+			System.out.print(numero); 
+		}
+	}
+}
+
+//ARRAY, VETOR DE DADOS
+
+public class Vetor{
+	public static void main(String[] args){
+		String[] nomes = new String [3];
+		nomes[0] = "Luciano";
+		nomes[1] = "Juliano";
+		nomes[2] = "Dutra";		
+		System.out.print(nomes[0]);
+ 
+		String[] nomes = {"Luciano","Juliano","Dutra"};
+		nomes[2] = "Escobar";
+		System.out.print(nomes[1]);
+
+		}
+	}
+}
+
+//FOREACH
+
+public class Foreach{
+	public static void main(String[] args){
+		String[] nomes = {"Luciano","Juliano","Dutra"};
+		for(String nome : nomes){
+			System.out.print(nome);
+		}
+		int[] numero = {1,5,10};
+		int soma = 0;
+		for(String n : numero){
+			soma = soma + n;
+		}		
+		System.out.print(soma);
+		}
+	}
+}
+
+// OPERADORES LÓGICOS
+
+public class OperadorLogico{
+	public static void main(String[] args){
+	/* && -> Operador "e/and" - Somente se as duas forem verdadeiras
+	*  || -> Operador "ou/or" - Se qualquer um dos dois for verdadeiro
+	*  !  -> Operador "não/not" - Ele nega a expressão quando utilizado
+	*
+	*/
+		int idade;
+		boolean temCarteira;
+		if(idade >=18 && temCarteira == true){
+			System.out.print("Pode dirigir!");
+		}else{
+			System.out.print("Não pode dirigir!");
+		}
+	}
+}
+
+// MATRIZ
+
+public class Matriz{
+	public static void main(String[] args){
+		String[][] nomes = new String[1][2]; //Sntring[LINHAS][COLUNAS]
+		nomes[0][0] = "Luciano";
+		nomes[0][1] = "Juliano";
+		nomes[0][2] = "Dutra";		
+		
+		String[][] nomes = {{"Luciano","Juliano"},{"dutra","Escobar"}};
+		nomes[1][0] = "Dutra";
+	}
+}
+
+// CLASSES, OBJETOS, ATRIBUTOS
+// Atributos são as características de uma classe
+
+public class Classes{
+	public static void main(String[] args){
+		Pessoa eu = new Pessoa();
+		eu.nome = "Luciano";
+		System.ou.println(eu.nome);
+
+		Pessoa ele = new Pessoa();
+		System.ou.println(ele.nome);
+		
+	}
+}
+
+public class Pessoa{
+	public static void main(String[] args){
+		String nome = "Juliano";		
+	}
+}
+
+
+// MÉTODOS
+// Métodos são as ações de uma classe
+public class Principal{
+	public static void main(String[] args){
+		Pessoa eu = new Pessoa();
+		eu.dormir();
+	}
+}
+
+public class Pessoa{
+	public static void main(String[] args){
+		String nome = "Juliano";		
+		
+		void dormir(){
+			System.out.println("zZzZzZ");
+		}
+	}
+}
+
+// MÉTODOS COM RETORNO
+
+public class Principal{
+	public static void main(String[] args){
+		Pessoa eu = new Pessoa();
+		System.out.ln(eu.apresentar());
+		//String apresentacao = eu.apresentar();
+		//System.out.ln(apresentacao);
+	}
+}
+
+public class Pessoa{
+	public static void main(String[] args){
+		String nome = "Juliano";		
+		
+		String apresentar(){
+			return "Prazer, meu nome é "+nome;
+		}
+	}
+}
+
+// MÉTODOS COM PARÂMETROS
+
+public class Principal{
+	public static void main(String[] args){
+		Pessoa eu = new Pessoa();
+		eu.mostrarNome("Luciano");
+
+		int idade = eu.calcularIdade(1987, 2022);
+		System.out.println(idade);
+	}
+}
+
+public class Pessoa{
+	public static void main(String[] args){
+		void mostrarNome(String nome){
+			System.out.println("Nome é: "+nome);
+		}
+		
+		int calcularIdade(int nascimento, int anoAtual){
+			return anoAtual - nascimento;
+		}
+	}
+}
+
+// MÉTODOS COM n PARÂMETROS
+
+public class Principal{
+	int somarNumeros(int  ... numeros){
+		int soma = 0;
+		for(int n : numeros){
+			soma += n;
+		}
+		return soma;
+	}
+
+	public static void main(String[] args){
+		Principal teste = new Principal();
+		int soma = teste.somarNumeros(12,34,67,89);
+		System.out.println(soma);
+	}
+}
+
+// CONSTRUTORES
+
+public class Principal{
+	public static void main(String[] args){
+		//MÉTODO 1
+		Pessoa objeto1 = new Pessoa();
+		
+		//MÉTODO 2
+		//Pessoa objeto2 = new Pessoa();
+		//System.out.println(objeto2.nome);
+		//System.out.println(objeto2.idade);
+
+		//MÉTODO 3
+		Pessoa objeto3 = new Pessoa("Luciano",35);
+		System.out.println(objeto3.nome);
+		System.out.println(objeto3.idade);		
+
+
+	}
+}
+
+public class Pessoa{
+		
+	String nome;
+	int idade;	
+		
+	//MÉTODO 1
+	Pessoa(){
+		System.out.println("Iniciou o construtorar vazio");
+	}
+		
+	//MÉTODO 2
+	//Pessoa(){
+	//	nome = "Rafael";
+	//	idade = 9;
+	//}
+
+	//MÉTODO 3
+	Pessoa(String n, int i){
+		nome = n;
+		idade = i;
+	}
+}
+
+// THIS
+/* O uso do THIS é para fazer referência ao atributo da classe em que ele
+*  está inserido.
+public class Principal{
+	public static void main(String[] args){
+		
+		//EXEMPLOS 1 E 2 DA CLASSE PESSOA
+		Pessoa eu = new Pessoa("Luciano");
+		System.out.println(eu.nome)
+
+	}
+}
+
+public class Pessoa{
+		
+		String nome = "Luciano";
+				
+		Pessoa(){
+			String nome = "Dutra";
+			System.out.println(nome);
+		}
+
+		/*Pessoa(){
+			String nome = "Dutra";
+			System.out.println(this.nome);
+		}*/
+
+		/*
+		String nome;
+		
+		//EXEMPLO 1		
+		Pessoa(String nome){
+			nome = nome;
+		}
+
+		//EXEMPLO 2		
+		Pessoa(String nome){
+			this.nome = nome;
+		}*/
+}
+
+// SOBRECARGA
+
+public class Sobrecarga{
+
+	int somar (int n1, int n2){
+		return n1 + n3;
+	}
+	int somar (int n1, int n2, int n3){
+		return this.somar(n1, n2) + n3;
+	}
+	
+	public static void main(String[] args){
+		Sobracarga sobjeto = new Sobrecagra();
+		int soma = objeto.somar(50,20,100);
+		System.out.println(soma);
+	}
+}
+/*
+// Sobrecarga de construtores
+public class Sobrecarga{
+		
+	String nome;
+	int idade;
+			
+	Sobrecarga(String nome){
+		this.nome = nome;
+	}
+
+	Sobrecarga(String nome, int idade){
+		this(nome);
+		this.idade = idade;
+	}
+
+	Sobrecarga objeto = new Sobrecarga("Luciano", 35);
+	
+	System.out.println(objeto.nome);
+}*/
+
+// STATIC, MODIFICADOR DE ACESSO GLOBAL
+
+/* Métodos estáticos não conseguem acessar atributos globais e não dependem da instância
+*  
+*
+*/
+
+public class Estaticos{
+
+	public static void main(String[] args){
+		
+		SalaDeAula.professor = "Leo";
+		SalaDeAula.ensino();
+
+		SalaDeAula a1 = new SalaDeAula();
+		a1.aluno = "Luciano";
+		
+		SalaDeAula a2 = new SalaDeAula();
+		a2.aluno = "Juliano";
+
+		System.out.println("a1.professor");
+		System.out.println("a2.professor");
+	}
+}
+
+// static não permite instanciar de um atributo, somente uma
+public class SalaDeAula{
+	
+	String aluno;
+	static String professor;
+	
+	static void ensino(){
+		System.out.println(professor+" Ensinando..");
+	}
+
+
+}
+
+//IMPORT e MODIFICADOR DE ACESSO PUBLIC
+/*
+* O import é necessário quando se necessita instanciar um objeto de uma
+* classe que está em outro 'package'
+*
+* O modificador 'public' permite que qualquer outra classe possa instanciar,
+* modificar e utilizar, objetos, atributos e métodos respectivamente
+*/
+
+package objetos;
+
+import teste.Animal;
+
+public class Principal{
+
+	public static void main(String[] args){
+		
+		Animal objeto = new Animail();
+		System.out.println(objeto.tipo);
+		objeto.fazerBarulho();
+	}
+}
+
+package teste;
+
+public class Animal(){
+	//Atributos
+	public String tipo = "Cachorro";
+	//Métodos
+	public void fazerBarulho(){
+		System.out.println("Au Au");
+	}
+	//Construtores
+	public Animal(){
+		System.out.println("Iniciou");
+	}
+}
+
+//MODIFICADOR DE ACESSO PRIVATE
+/*
+* O modificador 'private' permite que apenas a sua classe possa ter acesso,
+* a atributos e métodos
+*/
+
+package objetos;
+
+public class Privado{
+
+	public static void main(String[] args){
+		
+		Pessoa eu = new Pessoa();
+		System.out.println(eu.nome);
+		System.out.println(eu.pegarSenhaDoBanco());
+	}
+}
+
+package objetos;
+
+public class Pessoa(){
+	//Atributos
+	public String nome = "Luciano";
+	private int SenhaDoBanco = "123";
+
+//Métodos
+	public int pegarSenhaDoBanco(){
+		return SenhaDoBanco;
+	}
+
+}
+
+// GETTERS E SETTERS, ENCAPSULAMENTO
+
+package objetos;
+
+public class Encapsulamento{
+
+	public static void main(String[] args){
+		
+		Pessoa eu = new Pessoa();
+		eu.setNome("Juliano");
+		System.out.println(eu.getNome());
+	}
+}
+
+package objetos;
+
+public class Pessoa{
+	//Atributos
+	private String nome = "Luciano";
+
+
+	public String getNome(){
+		return nome;
+	}
+
+	public void setNome(String nome){
+		this.nome = nome;
+	}
+
+}
+
+// HERANÇA - EXTENDS
+/*
+* Não se pode herdar os atributos privados de uma classe pai
+* Só se pode herdar de apunas uma classe
+*/
+
+package objetos;
+
+public class Teste{
+
+	public static void main(String[] args){
+		
+		Cachorro cao = new Cachorro();
+		cao.dormir();
+		cao.peso = 12.5;
+		cao.raca = "Pitbull";
+
+		System.out.println(cao.peso);
+		System.out.println(cao.raca);
+	}
+}
+
+package objetos;
+
+public class Animal{
+
+	public String raca;
+	public double peso;
+
+	public void dormir(){
+		System.out.println("ZzZzZzZz");
+	}
+
+}
+
+package objetos;
+
+public class Cachorro extends Animal{
+
+	public String raca;
+	public double peso;
+
+	public void dormir(){
+		System.out.println("ZzZzZzZz");
+	}
+
+}
+
+// SOBRESCRITA DE MÉTODOS E POLIMORFISMO
+/*
+* 
+* 
+*/
+
+package objetos;
+
+public class Teste{
+
+	public static void barulho(Animal animal){
+		animal.fazerBarulho();
+	}
+
+	public static void main(String[] args){
+		
+		Cachorro cao = new Cachorro();
+
+		Galinha gal = new Galinha();
+
+		barulho(cao);
+		//cao.fazerBarulho;
+		//gal.fazerBarulho;
+
+	}
+}
+
+package objetos;
+
+public class Animal{
+
+	public void fazerBarulho(){
+		System.out.println("BARULHOOO");
+	}
+
+}
+
+package objetos;
+
+public class Cachorro extends Animal{
+
+	public void fazerBarulho(){
+		System.out.println("Au Au");
+	}
+
+}
+
+package objetos;
+
+public class Galinha extends Animal{
+
+	public void fazerBarulho(){
+		System.out.println("Có Có");
+	}
+
+}
+
+// SUPER, REFERENCIANDO A CLASSE PAI
+/*
+* 
+* 
+*/
+
+package objetos;
+
+public class Animal{
+
+	String raca;
+	double peso;
+	
+	public Animal(String raca, double peso){
+		this.raca = raca;
+		this.peso = peso;
+	}
+}
+
+package objetos;
+
+public class Cachorro extends Animal{
+
+	public Cachorro(){
+		Super("Pitbull",33);
+	}
+
+}
+
+// ABSTRACT
+/*
+* Uma classe abstrata não pode ser instanciada
+* Um método abstrato não tem corpo e deve ser implementado pela primeira
+* classe que herdar esta classe
+*/
+
+package objetos;
+
+public class Animal{
+
+	public abstract void fazerBarulho();
+}
+
+package objetos;
+
+public class Ave extends Animal{
+
+	public void fazerBarulho{
+		
+	}
+
+}
+
+// FINAL
+/*
+* Final em classes não podem ser herdadas por outras classes
+* Final em atributos bloqueiam a alteração de seu conteúdo
+* Final em métodos não permite serem sobrescritos
+*/
+
+package objetos;
+
+public class SerVivo{
+
+	final String habitat = "Planeta terra";
+
+	public void dormir(){
+		System.out.println("zZzZzZzZz");
+	}
+}
+
+package objetos;
+
+public class Teste /*extends SerHumano*/{
+
+	public static void main(String[] args){
+		
+		
+	}
+
+}
+
+package objetos;
+
+public final class SerHumano extends SerVivo{
+
+	//Tentativa de alteração do atributo habitat na classe pai
+	/*public SerHumano(){
+		habitat = "Marte";
+	}*/
+
+	public void dormir(){
+		System.out.println("zZzZzZzZz");
+	}
+}
+
+AULA 33..

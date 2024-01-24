@@ -1,0 +1,215 @@
+Ctrl +A e CTRL + i => Selecionar o texto e identar
+
+//CLASSE MODELO PRODUTOS
+
+public class Produto{
+	private in cod;
+	private String nome;
+	private String descricao;
+	private double preco;
+	private int estoque;
+	
+	getters e setters dos atributos..
+	equals e hascode da chave primária..
+	
+	
+}
+
+CLASSE CONTROLE PRODUTOS
+
+public class ControleProduto{
+	private static List<Produto p> listaProduto = new ArrayList<Produto>();
+	
+	public void inserir(Produto p){
+		listaProdutos.add(p);
+	}
+	
+	public List<Produto> GetListaProdutos(){
+		return listaProdutos;
+	}
+	
+	public List<Produto> getListaEstoque(){
+		List<Produto> listaEstoque = new ArrayList<>();
+		
+		for(Produto p: this.listaProdutos){
+			if(p.getEstoque() > 0){
+				listaEstoque.add(p);
+			}
+		}
+		return listaEstoque;
+	}
+	
+	public Produto localizarProduto(int codigo){
+		Produto produtoEncontrado = null;
+		for(Produto p : this.listaProdutos){
+			if (p.getCodigo() == codigo){
+				produtoEncontrado = p;
+			}
+		}
+	}
+
+	public void excluirProduto (int codigo){
+		Produto p = this.localizarProduto(codigo);
+		if(p != null){
+			listaProdutos.remove(p);
+		}
+	}
+
+	public void alterarProduto(Produto prod){
+		Produto p = this.localizarProduto(prod.getCodigo());
+		if (p != null){
+			p.setDescricao(prod.getDescricao());
+			p.setNome(prod.getNome());
+			p.setPreco(prod.getPreco());
+		}
+	}
+	
+	public void preencher(){
+		Produto p = new Produto(1, "Cadeira", "Cadeira de balanço", 180, 8);
+		listaProdutos.add(p);	
+
+		p = new Produto(2, "Mesa", "Mesa de metal", 350, 2);
+		listaProdutos.add(p);	
+
+		listaProdutos.add(new Produto(3, "Cadeira área", "Cadeira de corda", 80, 10);
+	}
+}
+
+CLASSE TELA DADOS
+
+public class TelaDados extends java.awt.swing.JDialog{
+	private boolean salvou = false;
+	
+	
+	public TelaDados (java.awt.Frame parent, boolean modal){
+		super(parent, modal);
+	}
+	
+	public boolean isSalvou(){
+		return this.Salvou;
+	}
+	
+	public void setProduto (Produto p){
+		txtCodigo.setText(String.valueOf(p.getCodigo()));
+		txtNome.setText(getNome());
+		txtDescricao.setText(getDescricao());
+		txtValor.setText(String.valueOf(p.getPreco()));
+		txtEstoque.setText(""+p.getEstoque());
+		txtCodigo.setEditable(false);
+	}
+	
+	public Produto getProduto(){
+		Produto p = new Produto();
+		p.setCodigo(Integer.parseInt(txtCodigo.getText()));
+		p.setNome(txtNome.getText());
+		p.setDescricao(txtDescricao.getText());
+		p.setPreco(Double.parseDouble(txtValor.getPreco()));
+		p.setEstoque(Integer.parseInt(txtEstoque.getText()));
+
+		return p;
+	}
+	
+	public void bloqueioDados(){
+		txtCodigo.setEditable(false);
+		txtNome.setEditable(false);
+		txtDescricao.setEditable(false);
+		txtValor.setEditable(false);
+		txtEstoque.setEditable(false);
+	}
+	
+	private void salvarMouseClicked(java.awt.event.MouseEvent evt){
+		this.salvou = true;
+		//dispose();
+		setVisible(false);
+	}
+
+	private void salvarMouseClicked(java.awt.event.MouseEvent evt){
+		//dispose();
+		setVisible(false);
+	}
+}
+
+
+CLASSE TELA PRODUTOS
+
+public class TelaManutencao extends javax.swing.JFrame{
+	private ArrayList<Produto> listaProdutos = new ArrayList<>();
+	private ControleProduto contProduto = new ControleProduto();
+
+	public TelaManutencao(){
+		listaProdutos.addAll(contProduto.getListaProdutos());
+
+		tabelaProdutos.getColumnModel().getColumn(0).setPreferredWidth(30);
+		tabelaProdutos.getColumnModel().getColumn(1).setPreferredWidth(500);
+		tabelaProdutos.getColumnModel().getColumn(2).setPreferredWidth(80);
+
+		atualizaTabela();
+
+		setLocationRelativeTo(null);
+	}
+
+	private void atualizaTabela(){
+		DefaultTableModel modelo = (DefaultTableModel) tabelaProdutos.getModel();
+		listaProdutos.clear();
+		listaProdutos.addAll(contProduto.getListaProdutos());
+
+		while(modelo.getRowCount()>0){
+			modelo.removeRow(0);
+		}
+		
+		for(Produto p : listaProdutos){
+			modelo.addRow(new Object[]{p.getCodigo(), p.getNome(), p.getPreco()});
+		}	
+	}
+
+	private void novoMouseClicked(java.awt.event.MouseEvent evt){
+		TelaDados tela = new TelaDados(null, true);
+		tela.setVisible(true);
+		if(tela.isSalvou){
+			contProduto.inserir(tela.getProduto());
+			atualizaTabela();
+		}
+	}
+	
+	private void alterarMouseClicked(java.awt.event.MouseEvent evt){
+		int linha = tabelaProdutos.getSelectedRow();
+		if(linha == -1){
+			JOptionPane.showMessageDialog(null, "Para alterar, selecione um produto na tabela");
+		}else{
+			TelaDados tela = new TelaDados(null, true);
+			tela.setProduto(listaProdutos.get(linha));
+			tela.setVisible(true);
+			if(tela.isSalvou()){
+				contProduto.alterarProduto(tela.getProduto());
+				atualizaTabela();
+			}
+		}
+	}
+	
+	private void removerMouseClicked(java.awt.event.MouseEvent evt){
+		int linha = tabelaProdutos.getSelectedRow();
+		if(linha == -1){
+			JOptionPane.showMessageDialog(null, "Para excluir, selecione um produto na tabela");
+		}else{
+			int op = JOptionPane.showConfirmDialog(null, "Deseja excluir o produto?", "EXCLUIR PRODUTO", JOptionPane.YES_NO_OPTION);
+			
+			if(op == JOptionPane.YES_OPTION){
+				Produto p = listaProdutos.get(linha);
+				contProduto.excluirProduto(p.getCodigo());
+				atualizaTabela();
+			}
+		}
+	}
+	
+	private void visualizarMouseClicked(java.awt.event.MouseEvent evt){
+		int linha = tabelaProdutos.getSelectedRow();
+		if(linha == -1){
+			JOptionPane.showMessageDialog(null, "Para visualizar, selecione um produto na tabela");
+		}else{
+			TelaDados tela = new TelaDados(null, true);
+			tela.setProduto(listaProdutos.get(linha));
+			tela.bloqueioDados();
+			tela.setVisible(true);
+		}
+	}
+}
